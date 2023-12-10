@@ -1,11 +1,10 @@
-﻿// Задайте одномерный массив, заполненный случайными
-//числами. Определите количество простых чисел в этоммассиве.
-//Примеры
-//[1 3 4 19 3] => 2
-//[4 3 4 1 9 5 21 13] => 3
-
-//Простое чмсло - делиться на себя и на единицу
-
+﻿//Задайте массив из N случайных целых чисел (N вводится с клавиатуры).
+//Найдите количество чисел, которые оканчиваются на 1 и
+//делятся нацело на 7.
+//Пример
+//[1 5 11 21 81 4 0 91 2 3]
+//=> 2
+ 
 void Print(int[] arr)
 {
 int size = arr.Length;
@@ -39,7 +38,7 @@ return false;
 return true;
 }
 
-int SimpleNum(int[] arr)
+int CountNum(int[] arr)
 {
 int count = 0;
 
@@ -58,5 +57,5 @@ int stop = int.Parse(Console.ReadLine()!);
 
 int[] mass = MassNums(num, start, stop);
 Print(mass);
-int result = SimpleNum(mass);
+int result = CountNum(mass);
 Console.WriteLine(result);

@@ -1,10 +1,8 @@
-﻿// Задайте одномерный массив, заполненный случайными
-//числами. Определите количество простых чисел в этоммассиве.
-//Примеры
-//[1 3 4 19 3] => 2
-//[4 3 4 1 9 5 21 13] => 3
-
-//Простое чмсло - делиться на себя и на единицу
+﻿// Заполните массив на N (вводится с консоли, не более 8) случайных целых чисел от 0 до 9.
+//Сформируйте целое число, которое будет состоять из цифр из массива. Старший разряд числа находится на 0-м индексе, младший – на последнем.
+//Пример
+//[1 3 2 4 2 3] => 132423
+//[2 3 1] => 231
 
 void Print(int[] arr)
 {
@@ -39,16 +37,15 @@ return false;
 return true;
 }
 
-int SimpleNum(int[] arr)
+long CountNum(int[] arr)
 {
-int count = 0;
+string word = "";
 
 foreach (int number in arr)
 {
-if (IsPrime(number))
-count++;
+word += number;
 }
-return count;
+return long.Parse(word);
 }
 
 
@@ -58,5 +55,5 @@ int stop = int.Parse(Console.ReadLine()!);
 
 int[] mass = MassNums(num, start, stop);
 Print(mass);
-int result = SimpleNum(mass);
+long result = CountNum(mass);
 Console.WriteLine(result);
